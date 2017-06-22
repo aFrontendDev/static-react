@@ -29,6 +29,7 @@ node_modules
 
 # generated components
 dist
+build
 test/results
 FRONTEND.md
 TODO.md
