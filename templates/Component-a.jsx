@@ -3,27 +3,59 @@ import withInitialProps from 'metalsmith-react-templates/withInitialProps';
 import Test from './test.jsx';
 
 class Ca extends React.Component {
-  state = {}
+  constructor(props) {
+    super(props);
 
-  componentDidMount = () => {
-    this.setState({
-      contents: this.props.contents
-    });
-
-    console.log(this.props);
+    const jsonData = this.props;
+    this.state = {
+      data: jsonData
+    };
   }
 
   render() {
+    let jsonData = this.state.data;
+    let tagsLength = jsonData.tags ? jsonData.tags.length : null;
+    let ctaLength = jsonData.ctas ? jsonData.ctas.length : null;
     return (
-      <div>
-        <h1>Component A</h1>
-        <h2>{this.props.subtitle}</h2>
-        <p>{this.props.contents}</p>
-        <p>{this.props.example.custom.variables[0].toString()}</p>
-        <div>
-            {this.props.anArray[0]}
-        </div>
-        <Test />
+      <div id={jsonData.id}>
+        <h1>{jsonData.title}</h1>
+        <h2>{jsonData.subtitle}</h2>
+
+        {
+          tagsLength ?
+          <ul>
+          {
+            jsonData.tags.map(function (item, index) {
+              return <li key={index}>{item}</li>
+            })
+          }
+          </ul>
+          : null
+        }
+
+        {
+          ctaLength ?
+          <div class="ctas">
+            {
+              jsonData.ctas.map( (cta, index) => {
+                return (
+                  <p key={index}>
+                    <a href={cta.href} target="_blank">
+                    {cta.text}
+                    </a>
+                  </p>
+                );
+              })
+            }
+          </div>
+          : null
+        }
+
+        <picture>
+            <source media="(min-width: 1024px)" srcSet={jsonData.image.lrg} />
+            <source media="(min-width: 768px)" srcSet={jsonData.image.med} />
+            <img srcSet={jsonData.image.small} src={jsonData.image.lrg} alt="alt text" />
+        </picture>
       </div>
     )
   }
