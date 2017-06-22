@@ -1,5 +1,4 @@
 import React from 'react';
-import withInitialProps from 'metalsmith-react-templates/withInitialProps';
 
 class Test extends React.Component {
   state = {}
@@ -13,11 +12,20 @@ class Test extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="block block--size-a test">
         <p>Hey this is a component</p>
+        <p>
+        {this.props.data.title} <br />
+        {this.props.data.bodyCopy}
+        </p>
       </div>
     )
   }
 }
 
-export default withInitialProps(Test);
+Test.propTypes = {
+  data: React.PropTypes.object.isRequired
+}
+
+
+export default Test;

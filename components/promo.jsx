@@ -1,25 +1,13 @@
 import React from 'react';
-import withInitialProps from 'metalsmith-react-templates/withInitialProps';
-import Test from './test.jsx';
-
-class Ca extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const jsonData = this.props;
-    this.state = {
-      data: jsonData
-    };
-  }
+class Promo extends React.Component {
 
   render() {
-    let jsonData = this.state.data;
+    let jsonData = this.props.data;
     let tagsLength = jsonData.tags ? jsonData.tags.length : null;
     let ctaLength = jsonData.ctas ? jsonData.ctas.length : null;
     return (
-      <div id={jsonData.id}>
+      <div className="block block--size-a promo" id={jsonData.id}>
         <h1>{jsonData.title}</h1>
-        <h2>{jsonData.subtitle}</h2>
 
         {
           tagsLength ?
@@ -61,4 +49,9 @@ class Ca extends React.Component {
   }
 }
 
-export default withInitialProps(Ca);
+Promo.propTypes = {
+  data: React.PropTypes.object.isRequired
+}
+
+
+export default Promo;

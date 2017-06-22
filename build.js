@@ -4,12 +4,13 @@ var Metalsmith = require('metalsmith');
 var reactTemplate = require('metalsmith-react-templates').default;
 
 new Metalsmith(__dirname)
-  .source('./src')
+  .source('./page_data')
   .clean(true)
   .use(reactTemplate({
     babel: true,
-    directory: 'templates',
-    baseFile: 'base.html',
+    directory: 'pages',
+    baseFileDirectory: 'layouts',
+    baseFile: '_layout-a.html',
     isStatic: true
   }))
   .destination('./build')
