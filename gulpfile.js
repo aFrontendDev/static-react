@@ -15,10 +15,11 @@ var config = require('./gulp/config');
 // build tasks
 var build = function(callback) {
     runSequence(
-        'clean:everything',
-        'styles',
-        'scripts-dev',
-        'assets',
+        // 'clean:everything',
+        // 'styles',
+        // 'scripts-dev',
+        // 'assets',
+        'listings',
         callback
     );
 };
