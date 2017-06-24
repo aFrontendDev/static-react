@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Test extends React.Component {
   state = {}
@@ -13,7 +14,7 @@ class Test extends React.Component {
   render() {
     return (
       <div className="block block--size-a test">
-        <p>Hey this is a component</p>
+        <p>Hey this is a componentfghvbjnkm hj v ghv gh</p>
         <p>
         {this.props.data.title} <br />
         {this.props.data.bodyCopy}
@@ -24,7 +25,7 @@ class Test extends React.Component {
 }
 
 Test.propTypes = {
-  data: React.PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 }
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 class Promo extends React.Component {
 
   render() {
@@ -50,7 +52,7 @@ class Promo extends React.Component {
 }
 
 Promo.propTypes = {
-  data: React.PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 }
 
 

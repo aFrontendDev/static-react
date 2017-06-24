@@ -5,7 +5,7 @@ var reactTemplate = require('metalsmith-react-templates').default;
 
 new Metalsmith(__dirname)
   .source('./page_data')
-  .clean(true)
+  .clean(false)
   .use(reactTemplate({
     babel: true,
     directory: 'pages',
@@ -13,7 +13,7 @@ new Metalsmith(__dirname)
     baseFile: '_layout-a.html',
     isStatic: true
   }))
-  .destination('./build')
+  .destination('./dist')
   .build(function(err) {
     if (err) {
       throw err;

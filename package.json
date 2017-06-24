@@ -5,9 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "npm run build:static && npm run build:bundle",
-    "build:bundle": "webpack",
-    "build:static": "node build.js"
+    "build": "node build.js"
   },
   "author": "",
   "dependencies": {
@@ -22,7 +20,6 @@
     "metalsmith-react-templates": "^7.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "webpack": "^2.4.1"
   },
   "devDependencies": {
     "del": "^2.2.0",

@@ -2,7 +2,7 @@
 
 var basePaths = {
 	src: '',
-	dist: 'build/'
+	dist: 'dist/'
 }
 
 var paths = {

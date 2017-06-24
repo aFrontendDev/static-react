@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // header and footer to be included on every page
 import Header from '../components/header.jsx';
 import Footer from '../components/footer.jsx';
@@ -9,7 +10,7 @@ import testData from '../data/test.json';
 import Promo from '../components/promo.jsx';
 import promoData from '../data/promos.json';
 
-class Test_layout extends React.Component {
+class ExamplePage extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -42,4 +43,8 @@ class Test_layout extends React.Component {
   }
 }
 
-export default Test_layout;
+ExamplePage.propTypes = {
+  pageClass: PropTypes.string
+};
+
+export default ExamplePage;
