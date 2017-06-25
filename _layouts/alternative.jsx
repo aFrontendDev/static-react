@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 // header and footer to be included on every page
 import Header from '../_components/header.jsx';
