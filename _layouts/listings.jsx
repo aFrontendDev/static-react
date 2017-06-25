@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import globalData from '../data/global.json';
+import globalData from '../_data/global.json';
 
 class Listings extends React.Component {
   constructor(props) {

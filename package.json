@@ -19,7 +19,7 @@
     "metalsmith": "^2.3.0",
     "metalsmith-react-templates": "^7.0.0",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0",
+    "react-dom": "^15.0.0"
   },
   "devDependencies": {
     "del": "^2.2.0",

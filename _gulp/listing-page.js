@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-const buildFolder = 'page_data/';
+const buildFolder = '_pages/';
 const fs = require('fs');
 const path = require('path');
 
